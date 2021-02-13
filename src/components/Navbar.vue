@@ -10,7 +10,7 @@
     <v-navigation-drawer v-model="drawer" app height="100vh" disable-resize-watcher> <!--dark color="rgba(0, 0, 0, 0.1)"-->
       <v-list nav dense>
         <v-list-item-group v-model="selectedItem" color="primary">
-          <v-list-item v-for="(item, i) in lists" :key="i">
+          <v-list-item v-for="(item, i) in lists" :key="i" :to="{ name: item.name }">
             <v-list-item-content>
               <v-list-item-title v-text="item.name"></v-list-item-title>
             </v-list-item-content>

@@ -18,8 +18,8 @@
             <v-row class="fill-height" style="margin-top: 0px;">
               <v-col cols="4" class="info-img-col" style="box-shadow: 0 0 40px 0 rgba(0, 0, 0, .5);" :style="{ backgroundImage: `url(${datas[i].img})` }"></v-col>
               <v-col cols="8" style="height: 100%;" class="d-flex flex-column justify-center">
-                <div style="font-size: 1.75rem;">{{ datas[i].name }}</div>
-                <div class="title mb-2">{{ datas[i].position }}</div>
+              <!--style="font-size: 1.75rem;"-->  <div :style="{ fontSize: $vuetify.breakpoint.name == 'xs' ? '1.25rem' : this.$vuetify.breakpoint.name == 'sm' ? '1.5rem' : '1.75rem' }">{{ datas[i].name }}</div>
+                <div class="mb-2" :style="{ fontSize: $vuetify.breakpoint.name == 'xs' ? '.75rem' : $vuetify.breakpoint.name ? '1rem' : '1.25rem' }">{{ datas[i].position }}</div>
                 <div style="font-size: 15px; font-weight: 400; font-style: italic;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam perferendis ipsam, quas harum mollitia adipisci architecto quia dolore similique suscipit voluptatum provident corporis doloribus maxime, unde animi ex recusandae obcaecati.</div>
                 <div class="social mt-2">
                   <v-btn v-for="a in 4" :key="a" icon outlined dark class="mr-2">
@@ -33,8 +33,8 @@
       </v-carousel-item>
     </v-carousel>
 
-    <div class="info-img-col mt-10" style="height: 40vh; width: 100%;" :style="{ backgroundImage: `url(${image3})` }">
-      <div style="background-color: rgba(173,20,87, .75); height: 100%; width: 100%;"></div>
+    <div class="info-img-col my-10" style="height: 40vh; width: 100%;" :style="{ backgroundImage: `url(${image3})` }">
+      <!-- <div style="background-color: rgba(173,20,87, .75); height: 100%; width: 100%;"></div> -->
     </div>
   </div>
 </template>
