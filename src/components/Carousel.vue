@@ -9,10 +9,9 @@
     data () {
       return {
         items: [
-          'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-          'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-          'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-          'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+          require('@/assets/carousel/img1.jpeg'),
+          require('@/assets/carousel/img2.jpeg'),
+          require('@/assets/carousel/img3.jpeg')
         ],
       }
     },

@@ -1,6 +1,79 @@
 <template>
-  <v-footer class="white" padless>
-    <v-row justify="center" no-gutters>
+  <v-footer padless style="background-color: rgb(173,20,87); height: auto; width: 100%;" class="white--text">
+    <v-container class="py-10">
+      <v-row>
+        <v-col cols="12" sm="4">
+          <div class="d-inline-flex">
+            <v-img :src="require('@/assets/aryan.jpeg')" height="90" width="90"></v-img>
+            <div class="ml-2">
+              <div style="font-size: 20px; line-height: 1.2;" class="mb-2">Aryan Educational Consultancy</div>
+              <div style="font-style: italic; font-size: 14px; font-weight: 400;">Best in Birgunj</div>
+            </div>
+          </div>
+        </v-col>
+        <v-col cols="12" sm="4">
+          <div class="title mb-2">Contact</div>
+          <div v-for="(contact, i) in contacts" :key="i" class="mb-2">
+            <v-icon color="white">{{ contact.icon }}</v-icon>
+            <span class="ml-2">{{ contact.text }}</span>
+          </div>
+        </v-col>
+        <v-col cols="12" sm="4">
+          <div class="title mb-1">Connect With Us</div>
+          <div v-for="(social, s) in socials" :key="s" class="mb-1">
+            <v-btn dark tile text outlined width="160" class="d-flex justify-start">
+              <v-icon left>{{ social.icon }}</v-icon>
+              <span class="font-weight-light text-capitalize">{{ social.name }}</span>
+            </v-btn>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-footer>
+</template>
+<!--style="background-color: rgba(173,20,87, .75); height: 100%; width: 100%;"-->
+<script>
+  export default {
+    data: () => ({
+      img: require('@/assets/background-pic.jpeg'),  
+      links: [
+        'Home',
+        'About Us',
+        'Team',
+        'Services',
+        'Blog',
+        'Contact Us',
+      ],
+      socials: [
+        { name: 'Facebook', icon: 'mdi-facebook' },  
+        { name: 'Instagram', icon: 'mdi-instagram' },
+        { name: 'YouTube', icon: 'mdi-youtube' }
+      ],
+      contacts: [
+        { icon: 'mdi-phone', text: '+9779876543210' },
+        { icon: 'mdi-map-marker', text: 'Near Om Asharm Birgunj, Nepal' }
+      ]
+    }),
+  }
+</script>
+
+
+<!--
+<v-list dense class="pa-0" style="">
+              <v-list-item v-for="(contact, i) in contacts" :key="i" class="pa-0" style="color: transparent;">
+                  <v-list-item-icon class="mr-2">
+                    <v-icon v-text="contact.icon"></v-icon>
+                  </v-list-item-icon>
+
+                  <v-list-item-content>
+                    <v-list-item-title v-text="contact.text"></v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+            </v-list>-->
+
+
+<!--
+<v-row justify="center" no-gutters>
       <v-container>
         <v-row>
           <v-col cols="12" md="4" class="py-0 pt-1">
@@ -54,33 +127,8 @@
           </v-col>  
         </v-row>  
       </v-container>  
-      <!-- <v-btn v-for="link in links" :key="link" color="white" text rounded class="my-2">
-        {{ link }}
-      </v-btn> -->
       <v-container class="text-end">
         <strong>Copyright © {{ new Date().getFullYear() }}. Aryan Educational Consultancy</strong>  
       </v-container>
     </v-row>
-  </v-footer>
-</template>
-
-<script>
-  export default {
-    data: () => ({
-      img: require('@/assets/aryan.jpeg'),  
-      links: [
-        'Home',
-        'About Us',
-        'Team',
-        'Services',
-        'Blog',
-        'Contact Us',
-      ],
-      socials: [
-        { name: 'Facebook', icon: 'mdi-facebook' },  
-        { name: 'Instagram', icon: 'mdi-instagram' },
-        { name: 'YouTube', icon: 'mdi-youtube-play' }
-      ]
-    }),
-  }
-</script>
+-->
